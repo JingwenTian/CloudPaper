@@ -25,8 +25,8 @@
   
 **Nginx rewrite**
 
-  rewrite ^/share/(.*)$ /index.php?id=$1 last;
-  rewrite ^/widget/(.*)$ /widget.php?id=$1 last;
+        rewrite ^/share/(.*)$ /index.php?id=$1 last;
+        rewrite ^/widget/(.*)$ /widget.php?id=$1 last;
   
 最后感谢用到的所有开源代码或服务：bootstrap、medoo、michelf-markdown、upyun等。
 
