@@ -1,0 +1,28 @@
+<?php
+/**
+ * 数据库配置文件.
+ * User: JING
+ * Date: 14-8-2
+ * Time: 22:31
+ */
+
+define('UC_CONNECT', 'mysql');
+define('UC_DBHOST', 'localhost');			// host
+define('UC_DBUSER', 'username');				// 心用户名
+define('UC_DBPW', 'password');					    // 密码
+define('UC_DBNAME', 'dbname');				// 数据库名称
+define('UC_DBCHARSET', 'utf8');				// 数据库字符集
+define('UC_DBTABLEPRE', '');	    // UCenter 数据库表前缀
+
+define('__PUBLIC__','./static');
+
+define('CLOSE_UPLOAD',false); //是否允许上传（false为允许true为禁止）
+
+define('EXT_LIST','gif,jpg,png');//允许上传的类型
+
+//upyun
+define('UPYUN_DOMAIN','domin');//空间名称
+define('UPYUN_USER','user');//操作员
+define('UPYUN_PW','pw');//操作员密码
+
+
