@@ -12,16 +12,16 @@
 
 **数据库表结构：**
 
-  CREATE TABLE IF NOT EXISTS `blank` (
-  `id` int(10) NOT NULL COMMENT '笔记自增ID',
-    `userid` int(10) NOT NULL COMMENT '关联用户id',
-    `content` text NOT NULL COMMENT '笔记内容',
-    `sharelink` char(32) NOT NULL COMMENT '分享url',
-    `password` varchar(50) NOT NULL COMMENT '笔记加密',
-    `time` datetime NOT NULL COMMENT '笔记时间'
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='笔记表' AUTO_INCREMENT=1 ;
-  
-  ALTER TABLE `blank` ADD PRIMARY KEY (`id`), ADD KEY `sharelink` (`sharelink`);
+      CREATE TABLE IF NOT EXISTS `blank` (
+      `id` int(10) NOT NULL COMMENT '笔记自增ID',
+        `userid` int(10) NOT NULL COMMENT '关联用户id',
+        `content` text NOT NULL COMMENT '笔记内容',
+        `sharelink` char(32) NOT NULL COMMENT '分享url',
+        `password` varchar(50) NOT NULL COMMENT '笔记加密',
+        `time` datetime NOT NULL COMMENT '笔记时间'
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='笔记表' AUTO_INCREMENT=1 ;
+      
+      ALTER TABLE `blank` ADD PRIMARY KEY (`id`), ADD KEY `sharelink` (`sharelink`);
   
 **Nginx rewrite**
 
