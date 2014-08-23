@@ -47,7 +47,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">空白页</a>
+            <a class="navbar-brand" href="/">CloudPaper - 云纸片</a>
         </div>
        
     </div>
