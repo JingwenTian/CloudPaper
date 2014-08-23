@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>空白页</title>
+    <title>CloudPaper - 云纸片</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +54,7 @@
 </div>
 
 <!-- Begin page content -->
-<div class="container" style="padding:90px;">
+<div class="container" style="padding:90px 20px;">
 
     
     <form id="form"> 
@@ -72,7 +72,7 @@
 
 <div class="footer">
     <div class="container">
-        <p class="text-muted">© Copyright <a href="http://jingwentian.com" target="_blank">Jingwentian.com</a> • Powered by Jingwentian.</p>
+        <p class="text-muted">© Copyright <a href="http://jingwentian.com" target="_blank">jingwentian.com</a></p>
     </div>
 </div>
 

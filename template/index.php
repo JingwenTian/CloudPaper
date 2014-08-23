@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +87,7 @@
 
 <div class="footer">
     <div class="container">
-        <p class="text-muted">© Copyright <a href="http://jingwentian.com" target="_blank">Jingwentian.com</a> • Powered by Jingwentian.</p>
+        <p class="text-muted">© Copyright <a href="http://jingwentian.com" target="_blank">jingwentian.com</a></p>
     </div>
 </div>
 
@@ -203,6 +202,60 @@
     })
 </script>
 
+<script type="text/javascript">
+var dataForWeixin={
+        appId:  "",
+        img:    "http://blank.jingwentian.com/static/images/share.jpg",
+        url:    window.location.href,
+        title:  "CloudPaper 云纸片 - 记录并分享文字",
+        desc:   "用于临时记录文字的云端空白纸片",
+        fakeid: "",
+    };
+(function(){
+    var onBridgeReady=function(){
+        //显示底栏导航
+        WeixinJSBridge.call('hideToolbar');
+        //WeixinJSBridge.call('hideOptionMenu');
+        
+        // 发送给好友; 
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            WeixinJSBridge.invoke('sendAppMessage',{
+                "appid":        dataForWeixin.appId,
+                "img_url":      dataForWeixin.img,
+                "img_width":    "120",
+                "img_height":   "120",
+                "link":             dataForWeixin.url,
+                "desc":             dataForWeixin.desc,
+                "title":            dataForWeixin.title
+            }, function(res){});
+        });
+        // 分享到朋友圈;
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            WeixinJSBridge.invoke('shareTimeline',{
+            "img_url":dataForWeixin.img,
+            "img_width":"120",
+            "img_height":"120",
+            "link":dataForWeixin.url,
+            "desc":dataForWeixin.desc,
+            "title":dataForWeixin.title
+            }, function(res){});
+        });
+        
+    };
+    if (typeof WeixinJSBridge == "undefined"){
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady'   , onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady' , onBridgeReady);
+        }
+    }else{
+        onBridgeReady();
+    }
+    
+})();   
+    
+</script>
 </body>
 </html>
 
