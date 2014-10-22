@@ -1,6 +1,58 @@
 <?php
 session_start();
 
+function set_magic_quotes_gpc($arr=NULL){
+    
+    static $isset = 1;
+    if($isset==2) return ;
+    if($isset==1){
+        if (version_compare(PHP_VERSION, '5.3.0','<')) {
+             if(get_magic_quotes_gpc()==1){
+                $isset = 2;
+                return ;
+             }
+        }
+        $isset = 3;
+    }
+    $funcName = __FUNCTION__;
+    if($arr!==NULL){
+        foreach($arr as &$val){
+            if(is_array($val)){
+                $val=$funcName($val);    
+            }else{
+                $val = addslashes($val);
+            }
+            
+        }
+        return $arr;                
+    }
+    //GET 过滤
+    foreach($_GET as &$val){
+        if(is_array($val)){
+            $val=$funcName($val);    
+        }else{
+            $val = addslashes($val);
+        }
+    }
+    //POST 过滤
+    foreach($_POST as &$val){
+        if(is_array($val)){
+            $val=$funcName($val);    
+        }else{
+            $val = addslashes($val);
+        }
+    }
+    //COOKIE 过滤
+    foreach($_COOKIE as &$val){
+        if(is_array($val)){
+            $val=$funcName($val);    
+        }else{
+            $val = addslashes($val);
+        }
+    }        
+}
+set_magic_quotes_gpc();//调用过滤
+
 /**
  * 输出各种类型的数据，调试程序时打印数据使用。
  * @param	mixed	参数：可以是一个或多个任意变量或值
@@ -43,6 +95,7 @@ function DeleteHtml($str) {
 	$str = ereg_replace("\r","",$str); 
 	$str = ereg_replace("\n","",$str); 
 	$str = ereg_replace(" "," ",$str); 
+
 	return trim($str); 
 }
 

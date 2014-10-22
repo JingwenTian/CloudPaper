@@ -92,10 +92,10 @@ $html = Markdown::defaultTransform($content[0]['content']);
           <h4 class="modal-title" id="myLargeModalLabel">分享挂件</h4>
         </div>
         <div class="modal-body">
-            <pre class="prettyprint linenums>          
-            	<ol class="linenums>
+            <pre class="prettyprint linenums">          
+            	<ol class="linenums">
             		<li class="L0" style="list-style: none;"><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span> <span class="atn">src</span><span class="pun">=</span><span class="atv">"http://blank.jingwentian.com/widget/<?php echo $content[0]['sharelink']?>"</span><span class="tag">&gt;&lt;/script&gt;</span></li>
-            		<li class="L1" style="list-style: none;"><span class="tag">&lt;style</span><span class="tag">&gt;</span><span class="pln"> .blank_content{margin:0 auto;padding: 20px;border: 1px solid #eee;border-left-width: 5px;border-radius: 3px;border-left-color: #f0ad4e;}code,pre{font-family: Menlo, Monaco, Consolas, Courier New, monospace;}code {padding: 2px 4px;font-size: 90%;color: #c7254e;background-color: #f9f2f4;border-radius: 4px;}pre {display: block;padding: 9.5px;margin: 0 0 10px;font-size: 13px;line-height: 1.42857143;color: #333;word-break: break-all;word-wrap: break-word;background-color: #f5f5f5;border: 1px solid #ccc;border-radius: 4px;}pre code {padding: 0;font-size: inherit;color: inherit;white-space: pre-wrap;background-color: transparent;border-radius: 0;}</span><span class="tag">&lt;/style&gt;</span></li>
+            		<li class="L1" style="list-style: none;display:none;"><span class="tag">&lt;style</span><span class="tag">&gt;</span><span class="pln"> .blank_content{margin:0 auto;padding: 20px;border: 1px solid #eee;border-left-width: 5px;border-radius: 3px;border-left-color: #f0ad4e;}code,pre{font-family: Menlo, Monaco, Consolas, Courier New, monospace;}code {padding: 2px 4px;font-size: 90%;color: #c7254e;background-color: #f9f2f4;border-radius: 4px;}pre {display: block;padding: 9.5px;margin: 0 0 10px;font-size: 13px;line-height: 1.42857143;color: #333;word-break: break-all;word-wrap: break-word;background-color: #f5f5f5;border: 1px solid #ccc;border-radius: 4px;}pre code {padding: 0;font-size: inherit;color: inherit;white-space: pre-wrap;background-color: transparent;border-radius: 0;}</span><span class="tag">&lt;/style&gt;</span></li>
             	</ol>
             </pre>
         </div>
@@ -165,7 +165,6 @@ var dataForWeixin={
 })();   
     
 </script>
-
 </body>
 </html>
 
