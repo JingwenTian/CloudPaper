@@ -6,7 +6,7 @@ spl_autoload_register(function($class){
 # Get Markdown class
 use \Michelf\Markdown;
 
-$html = Markdown::defaultTransform($content[0]['content']);
+$html = Markdown::defaultTransform(stripslashes($content[0]['content']));
 
 ?>
 
@@ -36,7 +36,7 @@ $html = Markdown::defaultTransform($content[0]['content']);
     <![endif]-->
     <style type="text/css">
         #blank_display_none{display: none;}
-        #blank_content * {width: 100%;}
+        #blank_content * {max-width: 100%;}
     </style>
 
 </head>

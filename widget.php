@@ -27,9 +27,10 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 	//如果无需密码直接输出内容
 	if($content[0]['password'] == '') {
 		$html = Markdown::defaultTransform($content[0]['content']);
-		$js_widget .= "document.writeln('<link href=\"http://jingplus.qiniudn.com/static/css/github-markdown-style.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />');"; //挂件携带样式
+		$js_widget .= "document.writeln('<link href=\"http://jingplus.qiniudn.com/static/css/github-markdown-style.css?t=20141023\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />');"; //挂件携带样式
 		$js_widget .= "document.writeln('<div class=\"markdown-body\">".DeleteHtml($html)."</div>');";
 	//如需密码则输出加密提示
+		$js_widget .= "document.writeln('<div class=\"gist-meta\"><a href=\"http://blank.jingwentian.com/share/{$id}\" target=\"_blank\" style=\"float:right\">view raw</a>hosted with ❤ by <a href=\"http://blank.jingwentian.com\" target=\"_blank\">CloudPaper</a></div>');";
 	}else {
 		$js_widget = "document.writeln('".DeleteHtml(file_get_contents('./template/widget_pass.php'))."')";
 	}

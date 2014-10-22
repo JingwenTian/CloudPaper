@@ -17,7 +17,7 @@
 	</style>
 </head>
 <body>
-<div class="container" style="padding:90px 20px;">
+<div class="" style="padding:90px 20px;">
 
     
     <!--<form id="form"> 

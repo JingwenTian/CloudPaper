@@ -51,7 +51,7 @@ function set_magic_quotes_gpc($arr=NULL){
         }
     }        
 }
-set_magic_quotes_gpc();//调用过滤
+//set_magic_quotes_gpc();//调用自动过滤
 
 /**
  * 输出各种类型的数据，调试程序时打印数据使用。
