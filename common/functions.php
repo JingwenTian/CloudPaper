@@ -93,7 +93,7 @@ function DeleteHtml($str) {
 	$str = ereg_replace("\t","",$str); 
 	$str = ereg_replace("\r\n","",$str); 
 	$str = ereg_replace("\r","",$str); 
-	$str = ereg_replace("\n","",$str); 
+	$str = ereg_replace("\n","\\n",$str); 
 	$str = ereg_replace(" "," ",$str); 
 
 	return trim($str); 
